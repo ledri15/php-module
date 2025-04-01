@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -84,4 +84,4 @@ $age = array("Michel" => 25, "John" => 30, ")
 
     ?>
 </body>
-</html>
+</html> -->
