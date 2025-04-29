@@ -36,18 +36,18 @@
 
 //     echo $e -> getMessage();
 
-try{
-    $pdo = new PDO ("mysql:host=localhost;dbname=db" , "root", "");
+// try{
+//     $pdo = new PDO ("mysql:host=localhost;dbname=db" , "root", "");
 
-    $sql = "DROP TABLE products";
+//     $sql = "DROP TABLE products";
 
-    $pdo -> exec($sql);
-    echo "Column droped sucessfully";
-}
+//     $pdo -> exec($sql);
+//     echo "Column droped sucessfully";
+// }
 
 
-catch(PODException $e){
+// catch(PODException $e){
 
-    echo $e -> getMessage();
-}
+//     echo $e -> getMessage();
+// }
 ?> 
