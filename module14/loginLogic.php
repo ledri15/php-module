@@ -1,20 +1,36 @@
 <?php
-    include_once('config.php');
 
-    if(isset($_POST['submit'])){
-    $name = $_POST['name'];
-     $surname = $_POST['surname'];
+require "config.php";
+
+if(isset($_POST['submit']))
     $username = $_POST['username'];
-     $email = $_POST['email'];
-    $tempPass = $_POST['password'];
-    $password = password_hash($tempPass, PASSWORD_DEFAULT);
+    $password = $_POST['password'];
 
-
+    if(empty($username) || empty($password)){
+        echo "Fill all of the fields!";
+        header("refresh:2; url=login.php");
     }
+    else{
+                    $sql = "SELECT * FROM users WHERE username=:username";
+        $inserSQL = $conn -> prepare ($sql);
+        $insertSQL -> bindParam(':username', $username);
+        $insertSQL -> execute();
+    
+        
+            if($inserSQL ->rowCount() >0){
+                $data = $insertSQL -> fetch();
+                if(password_verify($password, $data['password'])){
+                    $_SESSION['username'] = $data['username'];
+                }
+                else{
+                    echo"Username or Password is incorrect";
+                    header("refresh:2; url=login.php");
 
-
-
-
-
+                }
+            }
+            else{
+                echo"user is not found!";
+            }
+    }
 
 ?>

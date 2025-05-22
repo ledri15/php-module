@@ -1,5 +1,5 @@
 <div class="signup">
-    <form action="register.php" method="post" class="form-signup">
+    <form action="signnup.php" method="post" class="form-signup">
     <h1 class="h33 mb-3 font-weight-normal">Please sign up</h1>
     <label for="inputemail" class="sr-only">name</label>
     <input type="text" id="inputEmail" class="form-control" placeholder="name" name="name" require autofocus>
